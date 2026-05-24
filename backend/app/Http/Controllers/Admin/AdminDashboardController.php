@@ -8,6 +8,8 @@ use App\Models\City;
 use App\Models\Event;
 use App\Models\EventRegistration;
 use App\Models\Place;
+use App\Models\Review;
+use App\Models\User;
 
 class AdminDashboardController extends Controller
 {
@@ -19,11 +21,14 @@ class AdminDashboardController extends Controller
             'places'        => Place::count(),
             'events'        => Event::count(),
             'registrations' => EventRegistration::count(),
+            'users'         => User::count(),
+            'reviews'       => Review::count(),
         ];
 
         $recentPlaces   = Place::with('city')->latest()->take(5)->get();
         $upcomingEvents = Event::where('date', '>=', now())->orderBy('date')->take(5)->get();
+        $recentReviews  = Review::with(['user', 'reviewable'])->latest()->take(5)->get();
 
-        return view('admin.dashboard', compact('stats', 'recentPlaces', 'upcomingEvents'));
+        return view('admin.dashboard', compact('stats', 'recentPlaces', 'upcomingEvents', 'recentReviews'));
     }
 }

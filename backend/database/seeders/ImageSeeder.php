@@ -9,144 +9,277 @@ class ImageSeeder extends Seeder
 {
     public function run(): void
     {
-        $base = 'https://images.unsplash.com/photo-';
-        $q    = '?auto=format&fit=crop&q=80&w=800';
+        $base = "https://images.unsplash.com/photo-";
+        $q = "?auto=format&fit=crop&q=80&w=800";
 
         $images = [
             // ── Places ──────────────────────────────────────────────────────────────────
-            // 1 – Andrés Carne de Res (restaurant / festive)
-            ['imageable_id' => 1,  'imageable_type' => 'place', 'url' => $base . '1414235077428-338989a2e8c0' . $q],
-            ['imageable_id' => 1,  'imageable_type' => 'place', 'url' => $base . '1555396273-367ea4eb4db5'    . $q],
+            // 1 – Andrés Carne de Res (restaurant, festive, decorated)
+            [
+                "imageable_id" => 1,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=1200/1DB1XKShcfF1xmTnkcFiznxhD2ZSoczp",
+            ],
 
-            // 2 – Museo del Oro (pre-Columbian gold)
-            ['imageable_id' => 2,  'imageable_type' => 'place', 'url' => $base . '1518998053901-5348d3961a04' . $q],
-            ['imageable_id' => 2,  'imageable_type' => 'place', 'url' => $base . '1566126715-d1a2d7d39f55'    . $q],
+            // 2 – Museo del Oro (museum, artifacts, gold, culture)
+            [
+                "imageable_id" => 2,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC29BBeRbzTTwa4bsCKbdDYC0QFIsqW9Czeg&s",
+            ],
 
-            // 3 – Casa de Nariño (neoclassical government palace)
-            ['imageable_id' => 3,  'imageable_type' => 'place', 'url' => $base . '1480714378408-67cf0d13bc1b' . $q],
-            ['imageable_id' => 3,  'imageable_type' => 'place', 'url' => $base . '1587558736087-60b8e45d1b04' . $q],
+            // 3 – Casa de Nariño (palace, government, Bogotá architecture)
+            [
+                "imageable_id" => 3,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNur8UQ07E58YfvrQa5Xjur50D4F2SKgO4vg&s",
+            ],
 
-            // 4 – Centro Histórico de Cartagena (colonial architecture)
-            ['imageable_id' => 4,  'imageable_type' => 'place', 'url' => $base . '1599058917212-d750089bc07e' . $q],
-            ['imageable_id' => 4,  'imageable_type' => 'place', 'url' => $base . '1535189043414-b732f91571b7' . $q],
+            // 4 – Centro Histórico de Cartagena (walled city, colorful, UNESCO)
+            [
+                "imageable_id" => 4,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://colombia.travel/sites/default/files/Cartagena-48-Foto-ProColombia.jpg",
+            ],
 
-            // 5 – Playa El Laguito (Caribbean beach)
-            ['imageable_id' => 5,  'imageable_type' => 'place', 'url' => $base . '1507525428034-b723cf961d3e' . $q],
-            ['imageable_id' => 5,  'imageable_type' => 'place', 'url' => $base . '1526772662643-f291e1f3b326' . $q],
+            // 5 – Playa El Laguito (Caribbean beach, turquoise)
+            [
+                "imageable_id" => 5,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://www.tierrabombacartagena.com/wp-content/uploads/2018/04/preview_playas_del_laguito_1.jpg",
+            ],
 
-            // 6 – El Celler (fine dining)
-            ['imageable_id' => 6,  'imageable_type' => 'place', 'url' => $base . '1565299585323-38d6b0865b47' . $q],
-            ['imageable_id' => 6,  'imageable_type' => 'place', 'url' => $base . '1559329007-40df8a9345d8'    . $q],
+            // 6 – El Celler (fine dining, elegant, restaurant)
+            [
+                "imageable_id" => 6,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/20/69/e4/el-celler-es-una-cocina.jpg?w=900&h=500&s=1",
+            ],
 
-            // 7 – Bazurto Social Club (nightlife)
-            ['imageable_id' => 7,  'imageable_type' => 'place', 'url' => $base . '1516450360452-9312f5e86fc7' . $q],
-            ['imageable_id' => 7,  'imageable_type' => 'place', 'url' => $base . '1571266028243-f41d8c0bade6' . $q],
+            // 7 – Bazurto Social Club (nightlife, club, dancing, Caribbean)
+            [
+                "imageable_id" => 7,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/4d/89/9d/sala-principal.jpg?w=900&h=500&s=1",
+            ],
 
-            // 8 – Playa Grande de Taganga (crystal-clear beach)
-            ['imageable_id' => 8,  'imageable_type' => 'place', 'url' => $base . '1510414842594-a61c69b5ae57' . $q],
-            ['imageable_id' => 8,  'imageable_type' => 'place', 'url' => $base . '1520116468816-95b69f65a604' . $q],
+            // 8 – Playa Grande de Taganga (crystal beach, tropical)
+            [
+                "imageable_id" => 8,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://laplayademajo.com/wp-content/uploads/2024/11/Playa-Grande-Taganga-1.webp",
+            ],
 
-            // 9 – La Casa de los Mariscos (seafood)
-            ['imageable_id' => 9,  'imageable_type' => 'place', 'url' => $base . '1544025162-d76538e9104e'    . $q],
-            ['imageable_id' => 9,  'imageable_type' => 'place', 'url' => $base . '1414235077428-338989a2e8c0' . $q],
+            // 9 – La Casa de los Mariscos (seafood, restaurant, Caribbean)
+            [
+                "imageable_id" => 9,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/83/84/bb/nuevo-salon-mirramana.jpg?w=900&h=-1&s=1",
+            ],
 
-            // 10 – Ciudad Perdida (jungle trek / archaeological)
-            ['imageable_id' => 10, 'imageable_type' => 'place', 'url' => $base . '1567610031966-12b69d21c177' . $q],
-            ['imageable_id' => 10, 'imageable_type' => 'place', 'url' => $base . '1533174072545-7a4b6ad7a6c3' . $q],
+            // 10 – Ciudad Perdida (ancient, ruins, jungle, archaeological)
+            [
+                "imageable_id" => 10,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKHM3xTXvg20sdbSksPijonw1lJnq8GceuqA&s",
+            ],
 
-            // 11 – Comuna 13 (urban art / murals)
-            ['imageable_id' => 11, 'imageable_type' => 'place', 'url' => $base . '1568252542512-9fe8fe9c87bb' . $q],
-            ['imageable_id' => 11, 'imageable_type' => 'place', 'url' => $base . '1500049053255-03f5dd566c7e' . $q],
+            // 11 – Comuna 13 (street art, murals, colorful, urban art)
+            [
+                "imageable_id" => 11,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://s3.amazonaws.com/rtvc-assets-senalcolombia.gov.co/s3fs-public/styles/imagen_noticia/public/field/image/comuna-13-historia-turismo-portada.jpg?itok=2Cz4pfZP",
+            ],
 
-            // 12 – Parque Arví (cloud forest)
-            ['imageable_id' => 12, 'imageable_type' => 'place', 'url' => $base . '1441974231531-c6227db76b6e' . $q],
-            ['imageable_id' => 12, 'imageable_type' => 'place', 'url' => $base . '1469474968028-56623f02e42e' . $q],
+            // 12 – Parque Arví (cloud forest, nature, mountains)
+            [
+                "imageable_id" => 12,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://www.sacredtreks.com/wp-content/uploads/2026/03/medellin-from-parque-arvi.jpg",
+            ],
 
-            // 13 – Parque Nacional Tayrona (jungle + sea)
-            ['imageable_id' => 13, 'imageable_type' => 'place', 'url' => $base . '1476514525535-07fb3b4ae5f1' . $q],
-            ['imageable_id' => 13, 'imageable_type' => 'place', 'url' => $base . '1451770634254-54c05e6a8f80' . $q],
+            // 13 – Parque Nacional Tayrona (tropical, jungle, beach)
+            [
+                "imageable_id" => 13,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://upload.wikimedia.org/wikipedia/commons/7/76/Cabo_San_Juan%2C_Colombia.jpg",
+            ],
 
-            // 14 – Valle de Cocora (wax palms)
-            ['imageable_id' => 14, 'imageable_type' => 'place', 'url' => $base . '1586348943529-beaae6c28db9' . $q],
-            ['imageable_id' => 14, 'imageable_type' => 'place', 'url' => $base . '1440284316574-5f128c67cf55' . $q],
+            // 14 – Valle de Cocora (wax palms, valley, scenic)
+            [
+                "imageable_id" => 14,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://colombia.travel/sites/default/files/styles/imagen_650x450_escala_y_recorte/public/actividades/valle_del_cocora_0.jpg.webp?itok=JaGCIthZ",
+            ],
 
-            // 15 – Café Jesús Martín (specialty coffee)
-            ['imageable_id' => 15, 'imageable_type' => 'place', 'url' => $base . '1495467033336-2effd8753d51' . $q],
-            ['imageable_id' => 15, 'imageable_type' => 'place', 'url' => $base . '1447933601428-65a28d8d97c8' . $q],
+            // 15 – Café Jesús Martín (coffee shop, coffee, Colombian coffee)
+            [
+                "imageable_id" => 15,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/64/28/e3/cafe-jesus-martin.jpg?w=600&h=400&s=1",
+            ],
 
-            // 16 – Mirador Alto de la Cruz (scenic viewpoint)
-            ['imageable_id' => 16, 'imageable_type' => 'place', 'url' => $base . '1586348943529-beaae6c28db9' . $q],
-            ['imageable_id' => 16, 'imageable_type' => 'place', 'url' => $base . '1469474968028-56623f02e42e' . $q],
+            // 16 – Mirador Alto de la Cruz (viewpoint, mountain, scenic view)
+            [
+                "imageable_id" => 16,
+                "imageable_type" => "place",
+                "url" =>
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/8a/2f/1b/caption.jpg?w=900&h=500&s=1",
+            ],
 
             // ── Events ──────────────────────────────────────────────────────────────────
-            // 1 – Festival Internacional de Música del Caribe
-            ['imageable_id' => 1,  'imageable_type' => 'event', 'url' => $base . '1470229722913-7c0e2dbbafd3' . $q],
-            ['imageable_id' => 1,  'imageable_type' => 'event', 'url' => $base . '1533174072545-7a4b6ad7a6c3' . $q],
+            // 1 – Festival Internacional de Música del Caribe (music, concert, Caribbean)
+            [
+                "imageable_id" => 1,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://aceraizquierda.wordpress.com/wp-content/uploads/2015/01/n710040516_2482030_3605.jpg?w=640",
+            ],
 
-            // 2 – Concierto al Atardecer en Taganga
-            ['imageable_id' => 2,  'imageable_type' => 'event', 'url' => $base . '1504609813442-a8924e83f187' . $q],
-            ['imageable_id' => 2,  'imageable_type' => 'event', 'url' => $base . '1516450360452-9312f5e86fc7' . $q],
+            // 2 – Concierto al Atardecer en Taganga (beach, concert, sunset, music)
+            [
+                "imageable_id" => 2,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://walksantamarta.com/img/atardecer_en_taganga.jpg",
+            ],
 
-            // 3 – Feria de las Flores de Medellín
-            ['imageable_id' => 3,  'imageable_type' => 'event', 'url' => $base . '1490750967868-88df5691240b' . $q],
-            ['imageable_id' => 3,  'imageable_type' => 'event', 'url' => $base . '1465146344425-f00d5f5c8f07' . $q],
+            // 3 – Feria de las Flores de Medellín (flowers, festival, colorful)
+            [
+                "imageable_id" => 3,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://www.gaytravel4u.com/wp-content/uploads/2022/02/Festival-of-the-Flowers-Medellin-Feria-de-las-Flores-1.jpg",
+            ],
 
-            // 4 – Maratón de Bogotá 42K
-            ['imageable_id' => 4,  'imageable_type' => 'event', 'url' => $base . '1461896836374-cf382b6dda37' . $q],
-            ['imageable_id' => 4,  'imageable_type' => 'event', 'url' => $base . '1571731966634-8eb2f6b49e0e' . $q],
+            // 4 – Maratón de Bogotá 42K (marathon, running, race)
+            [
+                "imageable_id" => 4,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://bogota.gov.co/sites/default/files/2025-07/mas-de-42.000-deportistas-participaron-en-la-media-maraton-bogota-2025_0.png",
+            ],
 
-            // 5 – Festival del Café Colombiano
-            ['imageable_id' => 5,  'imageable_type' => 'event', 'url' => $base . '1495467033336-2effd8753d51' . $q],
-            ['imageable_id' => 5,  'imageable_type' => 'event', 'url' => $base . '1447933601428-65a28d8d97c8' . $q],
+            // 5 – Festival del Café Colombiano (coffee, festival, culture)
+            [
+                "imageable_id" => 5,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://colombia.travel/sites/default/files/desfile-del-yipao.jpg",
+            ],
 
-            // 6 – Expedición a Ciudad Perdida
-            ['imageable_id' => 6,  'imageable_type' => 'event', 'url' => $base . '1567610031966-12b69d21c177' . $q],
-            ['imageable_id' => 6,  'imageable_type' => 'event', 'url' => $base . '1441974231531-c6227db76b6e' . $q],
+            // 6 – Expedición a Ciudad Perdida (trek, hiking, jungle, adventure)
+            [
+                "imageable_id" => 6,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://wiwatour.com/wp-content/uploads/2025/12/ciudad-perdida-mamo-romualdo.webp",
+            ],
 
-            // 7 – Noche Caribeña en la Ciudad Amurallada
-            ['imageable_id' => 7,  'imageable_type' => 'event', 'url' => $base . '1571266028243-f41d8c0bade6' . $q],
-            ['imageable_id' => 7,  'imageable_type' => 'event', 'url' => $base . '1599058917212-d750089bc07e' . $q],
+            // 7 – Noche Caribeña en la Ciudad Amurallada (Caribbean, celebration, night)
+            [
+                "imageable_id" => 7,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://lavueltaalmundo.net/upload/blog/20121005101432-im1-cartagena_1.jpg",
+            ],
 
-            // 8 – Tour Gastronómico Nocturno por Bogotá
-            ['imageable_id' => 8,  'imageable_type' => 'event', 'url' => $base . '1565299585323-38d6b0865b47' . $q],
-            ['imageable_id' => 8,  'imageable_type' => 'event', 'url' => $base . '1414235077428-338989a2e8c0' . $q],
+            // 8 – Tour Gastronómico Nocturno por Bogotá (food, gastronomy, dining)
+            [
+                "imageable_id" => 8,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://hansatours.com/images/a37-bogota-zona-rosa.jpg",
+            ],
 
-            // 9 – Amanecer en Cabo San Juan del Guía
-            ['imageable_id' => 9,  'imageable_type' => 'event', 'url' => $base . '1476514525535-07fb3b4ae5f1' . $q],
-            ['imageable_id' => 9,  'imageable_type' => 'event', 'url' => $base . '1507525428034-b723cf961d3e' . $q],
+            // 9 – Amanecer en Cabo San Juan del Guía (sunrise, beach, dawn, tropical)
+            [
+                "imageable_id" => 9,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7A3IB25KjlsK0lJLGbrCTBkHNVD4Dp9TarA&s",
+            ],
 
-            // 10 – Festival Vallenato de la Leyenda
-            ['imageable_id' => 10, 'imageable_type' => 'event', 'url' => $base . '1533174072545-7a4b6ad7a6c3' . $q],
-            ['imageable_id' => 10, 'imageable_type' => 'event', 'url' => $base . '1504609813442-a8924e83f187' . $q],
+            // 10 – Festival Vallenato de la Leyenda (music, accordion, culture, festival)
+            [
+                "imageable_id" => 10,
+                "imageable_type" => "event",
+                "url" =>
+                    "https://ortizo.com.co/cdn/shop/articles/festival_vallenato_2019_2_0.jpg?v=1743108558",
+            ],
 
             // ── Cities ──────────────────────────────────────────────────────────────────
-            // 1 – Bogotá (urban + Andes skyline)
-            ['imageable_id' => 1, 'imageable_type' => 'city', 'url' => $base . '1480714378408-67cf0d13bc1b' . $q],
-            ['imageable_id' => 1, 'imageable_type' => 'city', 'url' => $base . '1534430480872-3498386e7856' . $q],
+            // 1 – Bogotá (urban, skyline, high altitude, Andes)
+            [
+                "imageable_id" => 1,
+                "imageable_type" => "city",
+                "url" =>
+                    "https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/3bd50a83828201.5d48d9c54b4a6.jpg",
+            ],
 
-            // 2 – Cartagena (colored colonial buildings)
-            ['imageable_id' => 2, 'imageable_type' => 'city', 'url' => $base . '1599058917212-d750089bc07e' . $q],
-            ['imageable_id' => 2, 'imageable_type' => 'city', 'url' => $base . '1535189043414-b732f91571b7' . $q],
+            // 2 – Cartagena (colonial, walled city, colorful, Caribbean)
+            [
+                "imageable_id" => 2,
+                "imageable_type" => "city",
+                "url" =>
+                    "https://discovercartagena.com.co/wp-content/uploads/2023/01/CARTAGENA-CITY-TOUR_03-e1717777018757.jpg",
+            ],
 
-            // 3 – Santa Marta (Caribbean + Sierra Nevada)
-            ['imageable_id' => 3, 'imageable_type' => 'city', 'url' => $base . '1507525428034-b723cf961d3e' . $q],
-            ['imageable_id' => 3, 'imageable_type' => 'city', 'url' => $base . '1519046904654-dd20e527d2a6' . $q],
+            // 3 – Santa Marta (Caribbean coast, Sierra Nevada, tropical)
+            [
+                "imageable_id" => 3,
+                "imageable_type" => "city",
+                "url" =>
+                    "https://blogdesarrolladores.lahaus.com/hubfs/santa-marta-invesion.jpg",
+            ],
 
-            // 4 – Medellín (urban transformation + cable car)
-            ['imageable_id' => 4, 'imageable_type' => 'city', 'url' => $base . '1568252542512-9fe8fe9c87bb' . $q],
-            ['imageable_id' => 4, 'imageable_type' => 'city', 'url' => $base . '1500049053255-03f5dd566c7e' . $q],
+            // 4 – Medellín (innovation, transformation, mountains, urban)
+            [
+                "imageable_id" => 4,
+                "imageable_type" => "city",
+                "url" =>
+                    "https://colombia.co/sites/default/files/articles/banner-medellin-colombia.webp",
+            ],
 
-            // 5 – Tayrona (tropical rainforest + sea)
-            ['imageable_id' => 5, 'imageable_type' => 'city', 'url' => $base . '1441974231531-c6227db76b6e' . $q],
-            ['imageable_id' => 5, 'imageable_type' => 'city', 'url' => $base . '1451770634254-54c05e6a8f80' . $q],
+            // 5 – Tayrona (tropical, jungle, Caribbean sea, nature)
+            [
+                "imageable_id" => 5,
+                "imageable_type" => "city",
+                "url" =>
+                    "https://upload.wikimedia.org/wikipedia/commons/7/76/Cabo_San_Juan%2C_Colombia.jpg",
+            ],
 
-            // 6 – Salento (coffee + wax palms)
-            ['imageable_id' => 6, 'imageable_type' => 'city', 'url' => $base . '1495467033336-2effd8753d51' . $q],
-            ['imageable_id' => 6, 'imageable_type' => 'city', 'url' => $base . '1586348943529-beaae6c28db9' . $q],
+            // 6 – Salento (coffee region, colorful, wax palms, mountains)
+            [
+                "imageable_id" => 6,
+                "imageable_type" => "city",
+                "url" =>
+                    "https://www.triviantes.com/wp-content/uploads/2022/12/top-3-mejores-planes-en-Salento-2.jpg",
+            ],
         ];
 
         foreach ($images as $image) {
-            Image::create(array_merge($image, ['created_at' => now(), 'updated_at' => now()]));
+            Image::create(
+                array_merge($image, [
+                    "created_at" => now(),
+                    "updated_at" => now(),
+                ]),
+            );
         }
     }
 }

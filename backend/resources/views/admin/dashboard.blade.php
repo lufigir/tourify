@@ -38,6 +38,20 @@
             <p class="text-muted mb-0">Inscripciones</p>
         </div>
     </div>
+    <div class="col-md">
+        <div class="card p-4 text-center">
+            <i class="bi bi-person-badge text-primary fs-2"></i>
+            <h2 class="fw-bold mt-2">{{ $stats['users'] ?? 0 }}</h2>
+            <p class="text-muted mb-0">Usuarios</p>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="card p-4 text-center">
+            <i class="bi bi-star-fill text-warning fs-2"></i>
+            <h2 class="fw-bold mt-2">{{ $stats['reviews'] ?? 0 }}</h2>
+            <p class="text-muted mb-0">Reseñas</p>
+        </div>
+    </div>
 </div>
 
 <div class="row g-4">
@@ -63,12 +77,41 @@
             <table class="table table-sm">
                 <thead><tr><th>Título</th><th>Fecha</th></tr></thead>
                 <tbody>
-                    @foreach($upcomingEvents as $event)
+                    @forelse($upcomingEvents as $event)
                     <tr>
                         <td>{{ $event->title }}</td>
                         <td>{{ \Carbon\Carbon::parse($event->date)->format('d/m/Y') }}</td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr><td colspan="2" class="text-muted text-center py-3">Sin eventos próximos.</td></tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mt-1">
+    <div class="col-md-12">
+        <div class="card p-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-chat-square-text me-2 text-warning"></i>Últimas Reseñas</h5>
+            <table class="table table-sm align-middle">
+                <thead><tr><th>Usuario</th><th>Sobre</th><th>Calificación</th><th>Comentario</th></tr></thead>
+                <tbody>
+                    @forelse($recentReviews as $review)
+                    <tr>
+                        <td>{{ $review->user?->name ?? 'Usuario eliminado' }}</td>
+                        <td class="text-capitalize">{{ $review->reviewable?->name ?? $review->reviewable?->title ?? $review->reviewable_type }}</td>
+                        <td class="text-warning text-nowrap">
+                            @for($i = 1; $i <= 5; $i++)
+                                <i class="bi bi-star{{ $i <= $review->rating ? '-fill' : '' }}"></i>
+                            @endfor
+                        </td>
+                        <td class="text-muted">{{ Str::limit($review->comment, 50) ?: '—' }}</td>
+                    </tr>
+                    @empty
+                    <tr><td colspan="4" class="text-muted text-center py-3">Sin reseñas todavía.</td></tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

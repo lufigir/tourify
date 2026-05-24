@@ -42,6 +42,15 @@
                 <a class="nav-link @if(request()->routeIs('admin.events.*')) active @endif" href="{{ route('admin.events.index') }}">
                     <i class="bi bi-calendar-event me-2"></i>Eventos
                 </a>
+                <a class="nav-link @if(request()->routeIs('admin.users.*')) active @endif" href="{{ route('admin.users.index') }}">
+                    <i class="bi bi-people me-2"></i>Usuarios
+                </a>
+                <a class="nav-link @if(request()->routeIs('admin.reviews.*')) active @endif" href="{{ route('admin.reviews.index') }}">
+                    <i class="bi bi-star me-2"></i>Reseñas
+                </a>
+                <a class="nav-link @if(request()->routeIs('admin.notifications.*')) active @endif" href="{{ route('admin.notifications.index') }}">
+                    <i class="bi bi-bell me-2"></i>Notificaciones
+                </a>
                 <hr style="border-color:rgba(255,255,255,0.3)">
                 <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
